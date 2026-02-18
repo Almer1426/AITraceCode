@@ -80,3 +80,10 @@ Setelah kamu selesai dengan fitur tersebut di GitHub, saatnya menggabungkannya k
 3. **Penting**: Pastikan `base: development` dan `compare: feat/nama-fitur-kamu`.
 4. Berikan deskripsi singkat apa yang kamu kerjakan.
 5. Minta anggota tim lain (reviewer) untuk mengecek kode kamu. Jika sudah disetujui (Approve), baru lakukan Merge oleh kamu atau timmu.
+
+## 👥 Team
+1. Almer Aji Valentino - 2802544280
+2. Frederick Kamsono - 2802549205
+3. Kevin Briando Saputra Rinaldy - 2802534172
+4. Rizky Mirzaviandy Priambodo - 2802549041
+5. Wilson Christian - 2802542804
