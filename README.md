@@ -3,13 +3,60 @@ Sistem deteksi kode berbasis AI untuk verifikasi autentisitas tugas pemrograman.
 
 ## 📂 Repository Structure
 Proyek ini dibangun dengan pendekatan modular untuk memastikan skalabilitas antara pengembangan model AI dan implementasi web backend. Berikut adalah rincian struktur direktori pada repositori ini:
-- `data/` - Dataset storage (raw, processed, splits)
-- `src/` - Core logic (data, features, models, evaluation)
-- `scripts/` - Training and evaluation entry points
-- `experiments/` - Configs and results per run
-- `app/` - Streamlit/FastAPI application layer
-- `notebooks/` - EDA and exploration only
-- `models/` - Saved model artifacts
+```
+AICodeTrace/
+│
+├── data/
+│   ├── raw/                  # Dataset mentah (jangan di-commit ke git, masuk .gitignore)
+│   ├── processed/            # Output preprocessing: tokenized, split, dll
+│   └── splits/               # train/val/test CSVs atau JSON yang sudah final
+│
+├── notebooks/                # Eksplorasi & EDA saja — bukan pipeline utama
+│   ├── 01_eda_aigcodeset.ipynb
+│   ├── 02_eda_codet_m4.ipynb
+│   └── 03_baseline_experiments.ipynb
+│
+├── src/                      # Core logic — semua yang reusable dan production-ready
+│   ├── data/
+│   │   ├── loader.py         # Load & merge dataset dari HuggingFace / local
+│   │   └── preprocessing.py  # Normalisasi, filtering, dedup
+│   ├── features/
+│   │   └── stylistic.py      # Feature engineering: comment ratio, var length, dll
+│   ├── models/
+│   │   ├── baseline.py       # TF-IDF + LR/SVM pipeline
+│   │   └── transformer.py    # CodeBERT fine-tuning via HF Trainer
+│   ├── evaluation/
+│   │   └── metrics.py        # Macro-F1, ROC-AUC, Brier, ECE — satu tempat
+│   └── explain/
+│       └── attribution.py    # SHAP / token saliency untuk reasoning output
+│
+├── experiments/              # Config + hasil tiap run — jangan hardcode di kode
+│   ├── configs/
+│   │   ├── baseline_tfidf.yaml
+│   │   └── codebert_finetune.yaml
+│   └── results/              # JSON/CSV output metrik tiap eksperimen
+│
+├── app/                      # Streamlit atau FastAPI — terpisah dari src
+│   ├── main.py               # Entry point app
+│   ├── components/           # UI components kalau Streamlit
+│   └── api/                  # Router kalau FastAPI
+│
+├── tests/                    # Unit test minimal untuk src/
+│   └── test_preprocessing.py
+│
+├── scripts/                  # One-off scripts: training, eval, inference
+│   ├── train_baseline.py
+│   ├── train_transformer.py
+│   └── evaluate.py
+│
+├── report/                   # Aset laporan akademik
+│   └── figures/              # Plot yang di-export dari evaluation
+│
+├── .gitignore                # data/raw/, models/*.bin, __pycache__, .env
+├── requirements.txt
+├── README.md
+└── config.py                 # Global constants: paths, seed, label mapping
+```
 
 ## 🤝 Panduan Kolaborasi Git & GitHub
 Untuk menjaga kualitas kode dan menghindari konflik saat pengerjaan proyek AICodeTrace, kita akan mengikuti alur kerja (workflow) standar. Aturan utamanya: Dilarang melakukan push langsung ke branch main.
