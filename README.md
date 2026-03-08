@@ -3,25 +3,13 @@ Sistem deteksi kode berbasis AI untuk verifikasi autentisitas tugas pemrograman.
 
 ## 📂 Repository Structure
 Proyek ini dibangun dengan pendekatan modular untuk memastikan skalabilitas antara pengembangan model AI dan implementasi web backend. Berikut adalah rincian struktur direktori pada repositori ini:
-```
-AICodeTrace/
-├── data/                   # Penyimpanan dataset utama
-│   ├── raw/                # Data mentah asli (CodeNet/AIGCodeSet)
-│   └── processed/          # Data siap training (setelah tokenisasi)
-├── notebooks/              # Eksperimen awal, prototyping, & EDA (Jupyter)
-├── src/                    # Source code utama (Modular Logic)
-│   ├── data_loader.py      # Script untuk pembacaan & preprocessing dataset
-│   ├── model.py            # Definisi arsitektur CodeBERT + Classification Head
-│   ├── trainer.py          # Implementasi training & validation loop
-│   └── utils.py            # Fungsi pembantu (logging, metrics calculation)
-├── models/                 # Output penyimpanan model (.pt/.bin) pasca-training
-├── app/                    # Web Application layer (FastAPI)
-│   ├── main.py             # Entry point untuk server backend
-│   └── templates/          # Interface pengguna (HTML/CSS)
-├── requirements.txt        # Daftar dependensi library (Transformers, Torch, FastAPI)
-├── .gitignore              # Konfigurasi pengecualian file untuk Git
-└── README.md               # Dokumentasi utama proyek
-```
+- `data/` - Dataset storage (raw, processed, splits)
+- `src/` - Core logic (data, features, models, evaluation)
+- `scripts/` - Training and evaluation entry points
+- `experiments/` - Configs and results per run
+- `app/` - Streamlit/FastAPI application layer
+- `notebooks/` - EDA and exploration only
+- `models/` - Saved model artifacts
 
 ## 🤝 Panduan Kolaborasi Git & GitHub
 Untuk menjaga kualitas kode dan menghindari konflik saat pengerjaan proyek AICodeTrace, kita akan mengikuti alur kerja (workflow) standar. Aturan utamanya: Dilarang melakukan push langsung ke branch main.
