@@ -3,25 +3,13 @@ Sistem deteksi kode berbasis AI untuk verifikasi autentisitas tugas pemrograman.
 
 ## 📂 Repository Structure
 Proyek ini dibangun dengan pendekatan modular untuk memastikan skalabilitas antara pengembangan model AI dan implementasi web backend. Berikut adalah rincian struktur direktori pada repositori ini:
-```
-AICodeTrace/
-├── data/                   # Penyimpanan dataset utama
-│   ├── raw/                # Data mentah asli (CodeNet/AIGCodeSet)
-│   └── processed/          # Data siap training (setelah tokenisasi)
-├── notebooks/              # Eksperimen awal, prototyping, & EDA (Jupyter)
-├── src/                    # Source code utama (Modular Logic)
-│   ├── data_loader.py      # Script untuk pembacaan & preprocessing dataset
-│   ├── model.py            # Definisi arsitektur CodeBERT + Classification Head
-│   ├── trainer.py          # Implementasi training & validation loop
-│   └── utils.py            # Fungsi pembantu (logging, metrics calculation)
-├── models/                 # Output penyimpanan model (.pt/.bin) pasca-training
-├── app/                    # Web Application layer (FastAPI)
-│   ├── main.py             # Entry point untuk server backend
-│   └── templates/          # Interface pengguna (HTML/CSS)
-├── requirements.txt        # Daftar dependensi library (Transformers, Torch, FastAPI)
-├── .gitignore              # Konfigurasi pengecualian file untuk Git
-└── README.md               # Dokumentasi utama proyek
-```
+- `data/` - Dataset storage (raw, processed, splits)
+- `src/` - Core logic (data, features, models, evaluation)
+- `scripts/` - Training and evaluation entry points
+- `experiments/` - Configs and results per run
+- `app/` - Streamlit/FastAPI application layer
+- `notebooks/` - EDA and exploration only
+- `models/` - Saved model artifacts
 
 ## 🤝 Panduan Kolaborasi Git & GitHub
 Untuk menjaga kualitas kode dan menghindari konflik saat pengerjaan proyek AICodeTrace, kita akan mengikuti alur kerja (workflow) standar. Aturan utamanya: Dilarang melakukan push langsung ke branch main.
@@ -80,3 +68,10 @@ Setelah kamu selesai dengan fitur tersebut di GitHub, saatnya menggabungkannya k
 3. **Penting**: Pastikan `base: development` dan `compare: feat/nama-fitur-kamu`.
 4. Berikan deskripsi singkat apa yang kamu kerjakan.
 5. Minta anggota tim lain (reviewer) untuk mengecek kode kamu. Jika sudah disetujui (Approve), baru lakukan Merge oleh kamu atau timmu.
+
+## 👥 Team
+1. Almer Aji Valentino - 2802544280
+2. Frederick Kamsono - 2802549205
+3. Kevin Briando Saputra Rinaldy - 2802534172
+4. Rizky Mirzaviandy Priambodo - 2802549041
+5. Wilson Christian - 2802542804

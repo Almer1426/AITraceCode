@@ -1,0 +1,40 @@
+# ── Core ML & NLP ──────────────────────────────────────────────
+torch>=2.2.0
+transformers>=4.40.0
+datasets>=2.19.0
+tokenizers>=0.19.0
+accelerate>=0.29.0
+
+# ── Scikit-learn (Baseline) ─────────────────────────────────────
+scikit-learn>=1.4.0
+scipy>=1.13.0
+
+# ── Feature Engineering ─────────────────────────────────────────
+numpy>=1.26.0
+pandas>=2.2.0
+
+# ── Explainability ──────────────────────────────────────────────
+shap>=0.45.0
+captum>=0.7.0
+
+# ── Calibration & Evaluation ────────────────────────────────────
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# ── App Layer ───────────────────────────────────────────────────
+streamlit>=1.33.0
+fastapi>=0.111.0
+uvicorn>=0.29.0
+
+# ── Config & Utilities ──────────────────────────────────────────
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+loguru>=0.7.0
+
+# ── Experiment Tracking (optional tapi recommended) ─────────────
+# wandb>=0.16.0
+
+# ── Dev & Testing ───────────────────────────────────────────────
+pytest>=8.1.0
+black>=24.4.0
